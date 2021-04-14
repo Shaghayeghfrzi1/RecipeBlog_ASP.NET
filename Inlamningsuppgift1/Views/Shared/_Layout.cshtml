@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/styles.css" rel="stylesheet" />
+
+    <style>
+        /*Alla sidor*/
+        body {
+            background-color: lightgoldenrodyellow;
+            font-family: 'Comic Sans MS';
+            margin: 10px;
+        }
+
+        /*Alla textboxar*/
+        #SearchValue, #Title, #Post, #CreateDate, #CategoryID {
+            background-color: aliceblue;
+        }
+
+        /*Alla knappar*/
+        .my-buttons {
+            background-color: lightcoral;
+            font-style: italic;
+            color: white;
+        }
+
+        #text-div {
+            float: left;
+        }
+
+        #img-div {
+            float: right;
+        }
+
+        #headertext {
+            padding-left: 40px;
+            width: 95%;
+            height: 30px;
+            background-color: burlywood;
+        }
+        /*Tillbacks länken*/
+        .back-home, .back-home:hover, .back-home:link {
+            text-decoration: none;
+            color: blueviolet;
+            padding: 6px;
+            text-align: right;
+        }
+
+        /*länkar till hela resepter*/
+        .view-details-class {
+            text-decoration: none;
+        }
+
+        /*alla inlägg texter*/
+        a, a:link, a:visited {
+            color: black;
+            list-style-type: none;
+            background-color: white;
+            margin-top: 5px;
+        }
+
+        .back-home {
+            background-color: lavender;
+        }
+
+        #tid {
+            font-size: 11px;
+        }
+
+        .search-form {
+            float: right;
+        }
+
+        #posts {
+            width: 700px;
+            padding:10px;
+        }
+        a:hover {
+            color: forestgreen;
+        }
+
+        #link-text {
+            text-decoration: none;
+            color: red;
+        }
+
+        h3 {
+            color: darkred;
+        }
+
+        .my-full-recipe {
+            width: 500px;
+        }
+
+        #my-header {
+            text-align: left;
+            padding: 3px;
+            color: darkred;
+            font-style: italic;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #my-txt {
+            width: 300px;
+            height: 20px;
+        }
+
+        #my-txtp {
+            width: 350px;
+            height: 150px;
+        }
+
+        #serch-right {
+            float: right;
+        }
+
+        #my-li {
+            list-style-type: none;
+            background-color: white;
+            padding: 5px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: darkgray;
+            width: 95%;
+            height: 20px;
+            margin-bottom:0px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <p id="headertext">MinMatblogg.se</p>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+
+    
+</body>
+</html>

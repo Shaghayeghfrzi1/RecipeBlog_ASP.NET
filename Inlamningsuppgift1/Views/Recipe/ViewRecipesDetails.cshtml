@@ -1,0 +1,23 @@
+﻿
+@model Inlamningsuppgift1.Models.Recipe
+
+
+<h3> @Model.Title </h3>
+@switch (@Model.CategoryId)
+{
+    case 1:<h3>Kategori: Kött</h3> ; break;
+    case 2: <h3>Kategori: Kyckling</h3>; break;
+    case 3: <h3>Kategori: Fisk</h3>; break;
+    case 4: <h3>Kategori: Vegansk</h3>; break;
+    case 5: <h3>Kategori: Pasta</h3>; break;
+
+}
+<div class="my-full-recipe"> <h5>Gör så här: </h5> @Model.Post</div>
+<p>skapats i: @Model.CreateDate</p>
+
+
+<br />
+<br />
+<br />
+<a class="back-home" asp-controller="Recipe" asp-action="SearchRecipes"> Tillbacka</a>
+

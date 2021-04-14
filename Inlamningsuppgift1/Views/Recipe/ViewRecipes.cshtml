@@ -1,0 +1,55 @@
+﻿
+@model List<Inlamningsuppgift1.Models.Recipe>
+
+
+<div class="view-recipe-class" id="text-div">
+
+    <h1 id="my-header"> > Recept till vardag och fest </h1>
+    <p>Välkommen till receptbliggen för dig som söker enkla och goda recept</p>
+    <p>på mat och bakverk med tydliga beskrivningar steg för steg!</p>
+    <br />
+    <p>Matlagning och bakning är ett stort intresse för mig. Med min matblogg</p>
+    <p>vill jag dela med mig av tips och ge inspiration i köket! Här finns</p>
+    <p>maträtter till vardagens lunch och middag, huvudrätter och efterrätter</p>
+    <p>till fest, samt bakverk till fikat och många andra recept till alla tillfällen.</p>
+    <br />
+    <p>
+        Här kan du
+        <a id="link-text" asp-controller="Recipe" asp-action="SearchRecipes">Sök resept</a>
+        eller varför inte leta i de olika receptsamlingarna.
+    </p>
+    <p>
+        du kan även
+        <a id="link-text" asp-controller="Recipe" asp-action="AddRecipes">Dela dina nytt resept</a>
+        resept med oss i min blogg
+    </p>
+
+</div>
+
+<div id="img-div">
+    <img src="~/img/logo.jpg" height="400px" />
+</div>
+
+<br />
+<br />
+@*<div id=" serch-right">
+    <form asp-controller="Recipe" asp-action="SearchRecipes" method="post">
+
+        <input type="text" asp-for="SearchValue" />
+        <select asp-for="CategoryID" asp-items="Model.GetCategoriesListItems()"></select>
+
+        <button class="my-buttons" type="submit">sök</button>
+
+    </form>
+</div>*@
+
+<ul>
+    @foreach (var recipe in Model)
+    {
+        <li id="my-titels"><a id="my-li" class="view-details-class" asp-controller="Recipe" asp-action="ViewRecipesDetails" asp-route-id="@recipe.RecipeId">  @recipe.Title  <span id="tid"> @recipe.CreateDate</span> </a></li>
+        <p>@recipe.Post</p>
+        <br />
+    }
+
+
+</ul>

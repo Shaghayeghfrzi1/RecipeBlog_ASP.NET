@@ -1,0 +1,40 @@
+﻿
+@model Inlamningsuppgift1.ViewModels.RecpieViewModel
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+<form class="add-recipe-class" asp-controller="Recipe" asp-action="AddRecipes" method="post">
+
+    <!--Har rtt id i db som funkar inte här att spara nytt data-->
+
+    <label asp-for="Title" ></label>
+    <input id="my-txt" type="text" asp-for="Title" />
+    <span class="filed-validation-valid" asp-validation-for="Title" data-valmsg-replace="true"></span>
+    <br /> <br />
+
+    <label asp-for="Post"></label>
+    <textarea id="my-txtp" maxlength="2000" rows="5" asp-for="Post"></textarea>
+    <span class="filed-validation-valid" asp-validation-for="Post" data-valmsg-replace="true"></span>
+    <br /> <br />
+
+    <label asp-for="CreateDate"></label>
+    <input id="my-txt" type="date" asp-for="CreateDate" />
+    <span class="filed-validation-valid" asp-validation-for="CreateDate" data-valmsg-replace="true"></span>
+    <br /> <br />
+
+    <label asp-for="CategoryID"></label>
+    <select id="my-txt" asp-for="CategoryID" asp-items="Model.GetCategoriesListItems()"></select>
+    <span class="filed-validation-valid" asp-validation-for="CategoryID" data-valmsg-replace="true"></span>
+    <br /> <br />
+
+    <button class="my-buttons" type="submit">Spara reseptet</button>
+
+    <br />
+    <p>@ViewBag.Message</p>
+</form>
+
+<br />
+<br />
+<a class="back-home" asp-controller="Recipe" asp-action="ViewRecipes"> Tillbaka till startsida</a>

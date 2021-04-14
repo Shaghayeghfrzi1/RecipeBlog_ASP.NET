@@ -1,0 +1,31 @@
+﻿
+@model Inlamningsuppgift1.ViewModels.SearchViewModel
+
+
+<form class="search-form" asp-controller="Recipe" asp-action="SearchRecipes" method="post">
+
+    <select asp-for="CategoryID" asp-items="Model.GetCategoriesListItems()"></select>
+
+    <input type="text" asp-for="SearchValue" />
+
+    <button class="my-buttons" type="submit">sök</button>
+
+</form>
+
+
+
+<ul>
+    @foreach (var recipe in Model.Titles)
+    {
+    <li id="my-titels"><a id="my-li" class="view-details-class" asp-controller="Recipe" asp-action="ViewRecipesDetails" asp-route-id="@recipe.RecipeId">  @recipe.Title  <span id="tid"> @recipe.CreateDate</span> </a></li>
+    <div id="posts">@recipe.Post</div>
+    <br />
+    }
+
+
+</ul>
+
+<br />
+<br />
+<a class="back-home" asp-controller="Recipe" asp-action="ViewRecipes"> Tillbaka till start sida</a>
+
